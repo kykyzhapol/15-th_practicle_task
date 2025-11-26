@@ -1,6 +1,7 @@
-def count(n):
+def count(n: int) -> int:
     '''
-    Напишите рекурсивную функцию count(n) для вычисления количества цифр натурального числа.
+    Recursive function.
+    Calculates the number of digits of a natural number n.
     :param n:
     :return:
     '''
@@ -9,4 +10,15 @@ def count(n):
         return 1
     return 1 + count(n[:-1])
 
-print(count(999555))
+
+def main() -> None:
+    '''
+    Main function. Here user can enter request for function and see the result.
+    :return:
+    '''
+    n = int(input('Énter number n -->'))
+    print(count(n))
+
+
+if __name__ == '__main__':
+    main()
