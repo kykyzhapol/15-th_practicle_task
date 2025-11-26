@@ -7,7 +7,7 @@ def pownum(a: int, n: float) -> float:
     '''
     if n == 1:
         return a
-    return a * pownum(a, n-1)
+    return a * pownum(a, n - 1)
 
 
 def main() -> None:
