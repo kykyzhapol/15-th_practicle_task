@@ -1,9 +1,15 @@
-def numbers(x: int):
+def numbers(x: int) -> None:
     '''
-    Напишите рекурсивную функцию numbers(x), которая выводит
-    на экран цифры натурального числа x в обратном порядке.
-    Функция должна выводить по одной цифре в строке.
-    :return:
+    A recursive function that prints the digits of a natural number x in reverse order.
+    Each digit is printed on a separate line.
+
+    Base case:
+    - Empty string (when all digits have been processed) returns None
+
+    Recursive case:
+    - Print the last digit and call function with remaining digits
+    :param x: Natural number to process
+    :return: None
     '''
     x = str(x)
     if x == '':
@@ -12,4 +18,24 @@ def numbers(x: int):
     return numbers(x[:-1])
 
 
-numbers(100)
+def main() -> None:
+    '''
+    Main function. User enters a natural number and sees its digits in reverse order.
+    :return: None
+    '''
+    try:
+        x = int(input('Enter a natural number -> '))
+
+        if x <= 0:
+            print('Error: Please enter a natural number (positive integer)')
+            return
+
+        print(f'Digits of {x} in reverse order:')
+        numbers(x)
+
+    except ValueError:
+        print('Error: Please enter a valid integer')
+
+
+if __name__ == '__main__':
+    main()

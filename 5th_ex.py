@@ -1,7 +1,7 @@
-def mod_number(a, b):
+def mod_number(a: int, b: int) -> int:
     '''
-    Напишите рекурсивную функцию mod_number(a,b)
-    для нахождения остатка от деления натурального числа a на натуральное число b.
+    Recursive function.
+    Calculates the remainder when dividing a number a by a number b.
     :return:
     '''
     if a - b < b:
@@ -9,4 +9,15 @@ def mod_number(a, b):
     return mod_number(a - b, b)
 
 
-print(mod_number(2, 7))
+def main() -> None:
+    '''
+    Main function. Here user can enter request for function and see the result.
+    :return:
+    '''
+    a = int(input('Enter first number (a) ->'))
+    b = int(input('Enter second number (b) ->'))
+    print(mod_number(a, b))
+
+
+if __name__ == '__main__':
+    main()

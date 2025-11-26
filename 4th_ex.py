@@ -1,12 +1,24 @@
-def sum_progress(a1, r, n):
+def sum_progress(a1: float, r: float, n: int) -> float:
     '''
-    Даны первый член и разность арифметической прогрессии.
-    Написать рекурсивную функцию sum_progress(a1,r,n) для нахождения суммы n членов прогрессии.
+    Recursive function.
+    Calculates the sum of the first n terms of a progression.
     :return:
     '''
     if n == 1:
         return a1
-    return (a1 + (n - 1) * r) + sum_progress(a1, r, n-1)
+    return (a1 + (n - 1) * r) + sum_progress(a1, r, n - 1)
 
 
-print(sum_progress(1, 2, 3))
+def main() -> None:
+    '''
+    Main function. Here user can enter request for function and see the result.
+    :return:
+    '''
+    a1 = float(input('Enter first term (a1) ->'))
+    r = float(input('Enter definition (r) ->'))
+    n = int(input('Enter n ->'))
+    print(sum_progress(a1, r, n))
+
+
+if __name__ == '__main__':
+    main()
