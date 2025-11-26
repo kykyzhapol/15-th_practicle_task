@@ -1,4 +1,4 @@
-def pownum(a: float, n: int) -> float:
+def pownum(a: int, n: float) -> float:
     '''
     Recursive function to calculate the power of a number n
     :param a:
@@ -16,7 +16,7 @@ def main() -> None:
     :return:
     '''
     a = int(input('Enter power of number -->'))
-    n = int(input('Enter number -->'))
+    n = float(input('Enter number -->'))
     print(pownum(a, n))
 
 
